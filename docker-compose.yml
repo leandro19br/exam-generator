@@ -1,0 +1,17 @@
+version: '2.4'
+
+services:
+  db:
+    image:  mysql:5.7
+    container_name: mysql_exam
+    environment:
+      MYSQL_USER: root
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - "3306:3306"
+    volumes:
+      - devdojo_data:/var/lib/mysql
+    mem_limit: 512m
+
+volumes:
+  devdojo_data:
